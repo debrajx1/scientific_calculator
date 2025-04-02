@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- MathJax for equation formatting -->
+    <script type="text/javascript" async
+        src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+<body>
+    <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <div class="calculator">
+        <h2 id="current-mode">Mode : Standard</h2>
+        
+        <!-- Math Display for formatted equations -->
+        <div id="math-display" style="min-height: 50px; font-size: 24px;"></div>
+        <input type="text" id="display" disabled style="display: none;">
+
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button onclick="appendToDisplay('/')">÷</button>
+            <button onclick="appendToDisplay('*')">×</button>
+            <button onclick="appendToDisplay('-')">−</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('sqrt(')">√</button>
+            <button onclick="appendToDisplay('pow(')">xʸ</button>
+            <button onclick="appendToDisplay(',')">,</button>
+            
+            <!-- Scientific Mode -->
+            <button class="scientific-mode" onclick="appendToDisplay('sin(')">sin</button>
+            <button class="scientific-mode" onclick="appendToDisplay('cos(')">cos</button>
+            <button class="scientific-mode" onclick="appendToDisplay('tan(')">tan</button>
+            <button class="scientific-mode" onclick="appendToDisplay('log10(')">log</button>
+            <button class="scientific-mode" onclick="appendToDisplay('ln(')">ln</button>
+            <button class="scientific-mode" onclick="appendToDisplay('asin(')">asin</button>
+            <button class="scientific-mode" onclick="appendToDisplay('acos(')">acos</button>
+            <button class="scientific-mode" onclick="appendToDisplay('atan(')">atan</button>
+            
+            <!-- Complex Mode -->
+            <button class="complex-mode" onclick="appendToDisplay('i')">i</button>
+            <button class="complex-mode" onclick="appendToDisplay('abs(')">|z|</button>
+            <button class="complex-mode" onclick="appendToDisplay('arg(')">Arg</button>
+            <button class="complex-mode" onclick="appendToDisplay('real(')">Re</button>
+            <button class="complex-mode" onclick="appendToDisplay('imag(')">Im</button>
+            <button class="complex-mode" onclick="appendToDisplay('conj(')">Conj</button>
+            
+            <!-- Programming Mode -->
+            <button class="programming-mode" onclick="appendToDisplay('bin(')">Bin</button>
+            <button class="programming-mode" onclick="appendToDisplay('hex(')">Hex</button>
+            <button class="programming-mode" onclick="appendToDisplay('oct(')">Oct</button>
+
+            <button class="programming-mode" onclick="appendToDisplay('AND')">AND</button>
+            <button class="programming-mode" onclick="appendToDisplay('OR')">OR</button>
+            <button class="programming-mode" onclick="appendToDisplay('XOR')">XOR</button>
+           
+            <!-- Statistics Mode -->
+            <button class="statistics-mode" onclick="appendToDisplay('mean(')">Mean</button>
+            <button class="statistics-mode" onclick="appendToDisplay('median(')">Median</button>
+            <button class="statistics-mode" onclick="appendToDisplay('stddev(')">Std Dev</button>
+
+            <!-- Matrix Mode -->
+            <button class="matrix-mode" onclick="appendToDisplay('matrix([')">Matrix</button>
+            <button class="matrix-mode" onclick="appendToDisplay('det(')">Det</button>
+            <button class="matrix-mode" onclick="appendToDisplay('inv(')">Inv</button>
+            <button class="matrix-mode" onclick="appendToDisplay('dot(')">Dot</button>
+            <button class="matrix-mode" onclick="appendToDisplay('[')">[</button>
+            <button class="matrix-mode" onclick="appendToDisplay('])')">]</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button id="mode-btn" onclick="toggleModeMenu()">🔀</button>
+        </div>
+    </div>
+
+    <!-- Mode Selection Menu -->
+    <div id="mode-menu" class="hidden">
+        <h3>Select Mode</h3>
+        <label><input type="radio" name="mode" value="standard" checked onchange="changeMode('standard')"> Standard</label>
+        <label><input type="radio" name="mode" value="scientific" onchange="changeMode('scientific')"> Scientific</label>
+        <label><input type="radio" name="mode" value="complex" onchange="changeMode('complex')"> Complex</label>
+        <label><input type="radio" name="mode" value="programming" onchange="changeMode('programming')"> Programming</label>
+        <label><input type="radio" name="mode" value="statistics" onchange="changeMode('statistics')"> Statistics</label>
+        <label><input type="radio" name="mode" value="matrix" onchange="changeMode('matrix')"> Matrix</label>
+        <button onclick="closeModeMenu()">Close</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+</body>
+</html>
