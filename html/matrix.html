@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matrix Calculator</title>
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/matrix.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Standard Calculator</a></li>
+      <li><a href="trigonometry.html">Trigonometry</a></li>
+      <li><a href="calculus.html">Calculus</a></li>
+      <li><a href="complex.html">Complex Numbers</a></li>
+      <li><a href="matrix.html">Matrix</a></li>
+      <li><a href="equations.html">Equations</a></li>
+      <li><a href="graph.html">Graphing</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="programming.html">Programming</a></li>
+    </ul>
+  </nav>
+
+  <div class="matrix-container">
+    <h1>Matrix Calculator</h1>
+
+    <input type="text" id="matrix-size" placeholder="e.g., 3x3" />
+    <button onclick="generateMatrices()">Generate Matrix A</button>
+
+    <h2>Matrix A</h2>
+    <div id="matrix-a" class="matrix-grid"></div>
+
+    <h2 id="matrix-b-label" style="display:none;">Matrix B</h2>
+    <div id="matrix-b" class="matrix-grid" style="display:none;"></div>
+
+    <div id="matrix-operations" class="operation-buttons" style="display: none;">
+      <button onclick="showMatrixB('add')">Addition</button>
+      <button onclick="showMatrixB('multiply')">Multiplication</button>
+      <button onclick="calculateDeterminant()">Determinant (A)</button>
+      <button onclick="calculateTranspose()">Transpose (A)</button>
+      <button onclick="calculateInverse()">Inverse (A)</button>
+      <button onclick="calculateRank()">Rank (A)</button>
+      <button onclick="calculateEigenvalues()">Eigenvalues (A)</button>
+      <button onclick="clearMatrix()">Clear</button>
+    </div>
+
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>
+  <script src="../js/matrix.js"></script>
+</body>
+</html>

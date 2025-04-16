@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculus Calculator</title>
+
+  <!-- Math libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>
+  <script src="https://unpkg.com/algebrite@1.5.0/build/algebrite.bundle-for-browser.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/calculus.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Standard Calculator</a></li>
+      <li><a href="trigonometry.html">Trigonometry</a></li>
+      <li><a href="calculus.html">Calculus</a></li>
+      <li><a href="complex.html">Complex Numbers</a></li>
+      <li><a href="matrix.html">Matrix</a></li>
+      <li><a href="equations.html">Equations</a></li>
+      <li><a href="graph.html">Graphing</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="programming.html">Programming</a></li>
+    </ul>
+  </nav>
+
+  <div class="calculus">
+    <h1>Calculus Calculator</h1>
+    <input type="text" id="function" placeholder="Enter function (e.g., x^2)" />
+
+    <div class="buttons">
+      <button onclick="calculateDerivative()">Derivative</button>
+      <button onclick="showIntegralOptions()">Integral</button>
+    </div>
+
+    <!-- Hidden initially: appears only when "Integral" button is clicked -->
+    <div id="integralOptions" style="display: none;">
+      <div class="mode-selector">
+        <label><input type="radio" name="integralMode" value="symbolic" checked /> Indefinite Integral</label>
+        <label><input type="radio" name="integralMode" value="definite" /> Definite Integral</label>
+      </div>
+
+      <div id="limits" style="display: none; margin-top: 5px;">
+        <input type="number" id="lowerLimit" placeholder="Lower Limit (a)" step="any" />
+        <input type="number" id="upperLimit" placeholder="Upper Limit (b)" step="any" />
+      </div>
+
+      <button onclick="calculateIntegral()">Calculate Integral</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="../js/calculus.js"></script>
+</body>
+</html>

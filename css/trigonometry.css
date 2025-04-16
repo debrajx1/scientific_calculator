@@ -1,0 +1,180 @@
+/* Global reset for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent scrolling */
+html, body {
+  height: 100%;  /* Ensure full height */
+  overflow: hidden;  /* Remove both vertical and horizontal scrollbars */
+}
+
+/* General body styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb; /* Soft light background */
+  color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  margin-top: 80px; /* Added space for navbar */
+  overflow-x: hidden; /* Remove horizontal scrollbar */
+}
+
+/* Navbar styling */
+nav {
+  background-color: rgba(255, 255, 255, 0.9); /* Light and welcoming navbar */
+  padding: 10px 0;  /* Reduced navbar padding */
+  width: 100%;
+  position: fixed; /* Make navbar fixed at top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 12px; /* Reduced margin between navbar items */
+}
+
+nav ul li a {
+  color: #444; /* Dark text for readability */
+  text-decoration: none;
+  font-size: 14px;  /* Smaller font size for navbar items */
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #00a8ff; /* Welcoming blue color for hover */
+  border-bottom: 2px solid #00a8ff; /* Border color change */
+}
+
+/* Main container for the calculator */
+main {
+  width: 100%;
+  max-width: 380px; /* Reduced size of the container */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 35px 30px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin-top: -90px; /* Reduced margin-top to bring the container closer to the navbar */
+}
+
+/* Calculator display */
+#display {
+  width: 100%;
+  padding: 14px;
+  font-size: 28px;  /* Reduced font size */
+  text-align: right;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f9fc; /* Lighter background for display */
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Button container */
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;  /* Reduced gap between buttons */
+  width: 100%;
+}
+
+/* Button styling */
+button {
+  padding: 12px;  /* Reduced padding for smaller buttons */
+  font-size: 18px;  /* Reduced font size */
+  border: none;
+  border-radius: 10px;
+  background-color: #e0f7fa; /* Soft pastel button color */
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #b2ebf2; /* Slightly darker blue on hover */
+}
+
+button:active {
+  background-color: #80deea; /* Even darker on active */
+  transform: scale(0.98);
+}
+
+button:focus {
+  outline: none;
+}
+
+button#clear {
+  background-color: #ffeb3b; /* Yellow for clear button */
+}
+
+button#clear:hover {
+  background-color: #ffcc00;
+}
+
+/* Trigonometric function buttons */
+button.trig {
+  background-color: #00a8ff; /* Welcoming blue for trig functions */
+}
+
+button.trig:hover {
+  background-color: #1db2ff; /* Slightly darker blue on hover */
+}
+
+button.trig:active {
+  background-color: #0091cc; /* Darker blue for active state */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  main {
+    padding: 25px;
+    width: 100%;
+    max-width: 320px; /* Smaller width for mobile */
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  #display {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  button#equal {
+    font-size: 20px;
+    grid-column: span 4;
+  }
+}
+
+/* Subtle animation effect on the calculator container */
+main:hover {
+  transform: translateY(-5px);
+}

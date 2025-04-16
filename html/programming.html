@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programming Tools</title>
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/programming.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Standard Calculator</a></li>
+      <li><a href="trigonometry.html">Trigonometry</a></li>
+      <li><a href="calculus.html">Calculus</a></li>
+      <li><a href="complex.html">Complex Numbers</a></li>
+      <li><a href="matrix.html">Matrix</a></li>
+      <li><a href="equations.html">Equations</a></li>
+      <li><a href="graph.html">Graphing</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="programming.html">Programming</a></li>
+    </ul>
+  </nav>
+
+  <div class="programming">
+    <h1>Programming Tools</h1>
+
+    <!-- Base Converter -->
+    <section class="tool-section">
+      <h2>Base Converter</h2>
+      <input type="text" id="baseInput" placeholder="Enter number" />
+      <select id="baseSelect">
+        <option value="bin">Binary</option>
+        <option value="oct">Octal</option>
+        <option value="dec">Decimal</option>
+        <option value="hex">Hexadecimal</option>
+      </select>
+      <button onclick="convertBase()">Convert</button>
+      <div id="baseResult"></div>
+    </section>
+
+    <!-- Logic Gates -->
+    <section class="tool-section">
+      <h2>Logic Gate Calculator</h2>
+      <input type="text" id="inputA" placeholder="Input A (0 or 1)" />
+      <input type="text" id="inputB" placeholder="Input B (0 or 1)" />
+      <select id="gateType">
+        <option value="AND">AND</option>
+        <option value="OR">OR</option>
+        <option value="XOR">XOR</option>
+        <option value="NAND">NAND</option>
+        <option value="NOR">NOR</option>
+        <option value="XNOR">XNOR</option>
+        <option value="NOT">NOT A</option>
+      </select>
+      <button onclick="calculateLogic()">Calculate</button>
+      <div id="logicResult"></div>
+    </section>
+  </div>
+
+  <script src="../js/programming.js"></script>
+</body>
+</html>

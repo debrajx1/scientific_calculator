@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equation Solver</title>
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/equations.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Standard Calculator</a></li>
+      <li><a href="trigonometry.html">Trigonometry</a></li>
+      <li><a href="calculus.html">Calculus</a></li>
+      <li><a href="complex.html">Complex Numbers</a></li>
+      <li><a href="matrix.html">Matrix</a></li>
+      <li><a href="equations.html">Equations</a></li>
+      <li><a href="graph.html">Graphing</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="programming.html">Programming</a></li>
+    </ul>
+  </nav>
+
+  <div class="equation-container">
+    <h1>Equation Solver</h1>
+    <p>Choose the type of equation to solve:</p>
+    <div class="equation-type">
+      <button onclick="showLinearSolver()">Linear Equation</button>
+      <button onclick="showQuadraticSolver()">Quadratic Equation</button>
+      <button onclick="showCubicSolver()">Cubic Equation</button>
+    </div>
+    
+    <div id="linear-solver" class="equation-solver">
+      <h2>Linear Equation (ax + b = 0)</h2>
+      <input type="number" id="linear-a" placeholder="a (coefficient of x)">
+      <input type="number" id="linear-b" placeholder="b (constant)">
+      <button onclick="solveLinear()">Solve</button>
+    </div>
+
+    <div id="quadratic-solver" class="equation-solver" style="display:none;">
+      <h2>Quadratic Equation (ax² + bx + c = 0)</h2>
+      <input type="number" id="quadratic-a" placeholder="a">
+      <input type="number" id="quadratic-b" placeholder="b">
+      <input type="number" id="quadratic-c" placeholder="c">
+      <button onclick="solveQuadratic()">Solve</button>
+    </div>
+
+    <div id="cubic-solver" class="equation-solver" style="display:none;">
+      <h2>Cubic Equation (ax³ + bx² + cx + d = 0)</h2>
+      <input type="number" id="cubic-a" placeholder="a">
+      <input type="number" id="cubic-b" placeholder="b">
+      <input type="number" id="cubic-c" placeholder="c">
+      <input type="number" id="cubic-d" placeholder="d">
+      <button onclick="solveCubic()">Solve</button>
+    </div>
+
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <script src="../js/equations.js"></script>
+</body>
+</html>

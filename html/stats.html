@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistics Calculator</title>
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/stats.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Standard Calculator</a></li>
+      <li><a href="trigonometry.html">Trigonometry</a></li>
+      <li><a href="calculus.html">Calculus</a></li>
+      <li><a href="complex.html">Complex Numbers</a></li>
+      <li><a href="matrix.html">Matrix</a></li>
+      <li><a href="equations.html">Equations</a></li>
+      <li><a href="graph.html">Graphing</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="programming.html">Programming</a></li>
+    </ul>
+  </nav>
+
+  <div class="stats">
+    <h1>Statistics Calculator</h1>
+    <input type="text" id="data" placeholder="Enter data (e.g., 1,2,3)" />
+    <div class="buttons">
+      <button onclick="calculateMean()">Mean</button>
+      <button onclick="calculateMedian()">Median</button>
+      <button onclick="calculateMode()">Mode</button>
+      <button onclick="calculateVariance()">Variance</button>
+      <button onclick="calculateStdDev()">Standard Deviation</button>
+      <button onclick="calculateSum()">Sum</button>
+      <button onclick="calculateRange()">Range</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script src="../js/stats.js"></script>
+</body>
+</html>

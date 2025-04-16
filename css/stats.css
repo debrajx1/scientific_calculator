@@ -1,0 +1,125 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Light blue gradient */
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Navbar Styling */
+nav {
+  width: 100vw; /* Full width */
+  background-color: #1e3a8a; /* Deep blue */
+  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.2);
+  padding: 0 15px;
+  height: 60px; /* Reduced navbar height */
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+nav li {
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px; /* Slightly smaller padding */
+}
+
+nav a:hover {
+  color: #34d399; /* Teal hover */
+}
+
+/* Stats Calculator Styling */
+.stats {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.stats h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.stats input {
+  width: 90%;
+  padding: 12px;
+  margin: 15px auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #34d399;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #059669;
+}
+
+#result {
+  padding: 20px;
+  background-color: #f1f5f9;
+  border-left: 5px solid #34d399;
+  border-radius: 6px;
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats input {
+    width: 90%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}

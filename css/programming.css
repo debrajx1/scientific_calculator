@@ -1,0 +1,153 @@
+/* Programming Tools Page Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #89f7fe, #66a6ff);
+  color: #333;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Remove horizontal scrollbar */
+  overflow-y: hidden; /* Remove vertical scrollbar */
+}
+
+/* Navbar Styling */
+nav {
+  background: linear-gradient(to right, #2563eb, #1e40af); /* Matching the page color scheme */
+  padding: 5px 0; /* Reduced vertical padding */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 12px; /* Reduced horizontal spacing between items */
+}
+
+nav ul li a {
+  color: white;
+  font-size: 16px; /* Adjusted font size for a more professional appearance */
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px 12px; /* Reduced padding for a sleeker design */
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #1e40af;
+  border-radius: 4px;
+  transform: scale(1.05); /* Slightly increase size on hover for a modern feel */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}
+
+/* Container */
+.programming {
+  max-width: 700px; /* Decreased the width */
+  margin: 80px auto; /* Keeps it centered and below the navbar */
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevents scrolling within the container */
+}
+
+.programming h1 {
+  text-align: center;
+  font-size: 28px; /* Slightly smaller heading */
+  color: #1e3a8a;
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+/* Sections */
+.tool-section {
+  margin-bottom: 30px; /* Reduced section margin */
+}
+
+.tool-section h2 {
+  color: #2563eb;
+  font-size: 22px; /* Slightly smaller subheading */
+  margin-bottom: 15px;
+}
+
+/* Inputs & Buttons */
+input[type="text"], select {
+  padding: 10px;
+  font-size: 16px;
+  width: calc(50% - 20px);
+  margin: 8px 10px 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+select {
+  width: 200px;
+}
+
+button {
+  padding: 10px 15px; /* Reduced padding */
+  font-size: 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+/* Result Areas */
+#baseResult, #logicResult {
+  margin-top: 15px;
+  background-color: #f1f5f9;
+  border-left: 5px solid #2563eb;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px; /* Slightly smaller font */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  input[type="text"], select {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}

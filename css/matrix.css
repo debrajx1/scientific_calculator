@@ -1,0 +1,191 @@
+/* ===== Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Navigation Bar ===== */
+nav {
+  background-color: #003366;
+  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.15);
+  padding: 0 10px;
+  height: 60px;
+  overflow-x: auto; /* Enable horizontal scroll if needed on small screens */
+  white-space: nowrap;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+  min-width: 110px; /* Ensures consistent width per item */
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px; /* Slightly smaller font for better fit */
+  transition: color 0.3s;
+  padding: 8px 5px;
+  display: block;
+  white-space: nowrap; /* Prevents link text from breaking into multiple lines */
+}
+
+nav a:hover {
+  color: #00bbff;
+}
+
+
+/* ===== Main Container ===== */
+.matrix-container {
+  flex: 1;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-container h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #003366;
+}
+
+.matrix-container h2 {
+  margin-top: 30px;
+  color: #004080;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* ===== Input + Button ===== */
+#matrix-size {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 160px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+.matrix-container button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0077cc;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 5px 5px 15px 0;
+}
+
+.matrix-container button:hover {
+  background-color: #005fa3;
+}
+
+/* ===== Matrix Grid ===== */
+.matrix-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.matrix-row {
+  display: flex;
+  gap: 8px;
+}
+
+.matrix-cell {
+  width: 60px;
+  height: 42px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* ===== Operations Area ===== */
+.operation-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 12px;
+}
+
+/* ===== Result Display ===== */
+.result-box {
+  margin-top: 30px;
+  background-color: #f0f8ff;
+  padding: 18px 22px;
+  border-left: 5px solid #0077cc;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .matrix-cell {
+    width: 45px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .matrix-container {
+    padding: 25px 20px;
+    margin: 20px;
+  }
+
+  .operation-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #matrix-size {
+    width: 130px;
+    font-size: 15px;
+  }
+
+  .matrix-container button {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+}

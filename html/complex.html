@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complex Numbers Calculator</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/complex.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Standard Calculator</a></li>
+      <li><a href="trigonometry.html">Trigonometry</a></li>
+      <li><a href="calculus.html">Calculus</a></li>
+      <li><a href="complex.html">Complex Numbers</a></li>
+      <li><a href="matrix.html">Matrix</a></li>
+      <li><a href="equations.html">Equations</a></li>
+      <li><a href="graph.html">Graphing</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="programming.html">Programming</a></li>
+    </ul>
+  </nav>
+
+  <div class="complex-container">
+    <h1>Complex Numbers Calculator</h1>
+
+    <!-- Input -->
+    <input type="text" id="complex-number" placeholder="Enter Complex Number (e.g., 2+3i)" />
+
+    <!-- Optional 2nd Input -->
+    <input type="text" id="second-complex" placeholder="Enter Another Complex Number (for binary ops)" />
+
+    <!-- Operations -->
+    <div class="buttons">
+      <button onclick="calculateComplexConjugate()">Conjugate</button>
+      <button onclick="calculateMagnitude()">Magnitude</button>
+      <button onclick="calculatePhase()">Phase</button>
+      <button onclick="addComplex()">Add</button>
+      <button onclick="subtractComplex()">Subtract</button>
+      <button onclick="multiplyComplex()">Multiply</button>
+      <button onclick="divideComplex()">Divide</button>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="result-display"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>
+  <script src="../js/complex.js"></script>
+</body>
+</html>
